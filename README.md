@@ -1,15 +1,15 @@
-# 🧠 MCQ Solver — Chrome Extension
+# 🔍 Screen Scan Extension — Chrome Extension
 
-> An invisible, shortcut-driven Chrome extension that reads MCQs on any webpage and shows the correct answer inline — powered by the **Groq AI API**.
+> An invisible, shortcut-driven Chrome extension that scans any webpage and shows AI-generated answers inline — powered by the **Groq AI API**.
 
 ---
 
 ## ✨ Features
 
-- **Keyboard shortcut** — Press `Ctrl + Shift + Alt` anywhere to trigger the solver
-- **Selected text mode** — Highlight an MCQ and press the shortcut to solve just that question
-- **Full-page scan mode** — Press the shortcut with nothing selected to auto-detect and solve all MCQs on the page
-- **Right-click context menu** — Right-click selected text → *🧠 Solve MCQ*, or right-click anywhere → *🔍 Scan Page for MCQs*
+- **Keyboard shortcut** — Press `Ctrl + Shift + Alt` anywhere to trigger the scan
+- **Selected text mode** — Highlight any text and press the shortcut to get an AI answer for it
+- **Full-page scan mode** — Press the shortcut with nothing selected to auto-scan all content on the page
+- **Right-click context menu** — Right-click selected text → *🧠 Solve Selection*, or right-click anywhere → *🔍 Scan Page*
 - **Inline tooltip UI** — Answers appear in a sleek floating tooltip near your selection; click anywhere to dismiss
 - **One-time API key setup** — Prompted once, then stored locally via `chrome.storage`; never sent anywhere except Groq's API
 
@@ -18,7 +18,7 @@
 ## 📸 How It Works
 
 ```
-User selects MCQ text (or not)
+User selects text (or not)
         ↓
 Ctrl+Shift+Alt  OR  Right-click menu
         ↓
@@ -36,7 +36,7 @@ Answer shown inline as a floating tooltip  ✅ B. Mitochondria — It produces A
 1. Clone or download this repository
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable **Developer mode** (toggle in the top-right)
-4. Click **Load unpacked** and select the `mcq-solver-extension` folder
+4. Click **Load unpacked** and select the `screen-scan-extension` folder
 5. The extension icon will appear in your toolbar
 
 ---
@@ -58,10 +58,10 @@ This extension uses the [Groq API](https://console.groq.com/keys) (free tier ava
 
 | Action | How |
 |---|---|
-| Solve selected MCQ | Select text → `Ctrl + Shift + Alt` |
+| Analyze selected text | Select text → `Ctrl + Shift + Alt` |
 | Scan entire page | Press `Ctrl + Shift + Alt` with no selection |
-| Solve from right-click | Select text → Right-click → *🧠 Solve MCQ* |
-| Scan page from right-click | Right-click anywhere → *🔍 Scan Page for MCQs* |
+| Analyze from right-click | Select text → Right-click → *🧠 Solve Selection* |
+| Scan page from right-click | Right-click anywhere → *🔍 Scan Page* |
 | Dismiss the answer tooltip | Click anywhere on the page |
 
 ---
@@ -69,7 +69,7 @@ This extension uses the [Groq API](https://console.groq.com/keys) (free tier ava
 ## 📁 Project Structure
 
 ```
-mcq-solver-extension/
+screen-scan-extension/
 ├── manifest.json       # Extension manifest (MV3)
 ├── background.js       # Service worker — registers context menu items
 ├── content.js          # Injected into all pages — handles shortcuts, tooltip, Groq API calls
